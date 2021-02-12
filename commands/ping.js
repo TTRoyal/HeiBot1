@@ -6,12 +6,12 @@ module.exports={
     description: "Command ini digunakan untuk Ping",
     execute(message, args){
         
-    if(Date.now() + 4000 - message.createdTimestamp > `500` ) {
-       message.channel.send(`> Le ping est de ${Date.now() +4000 - message.createdTimestamp} ms\n> Indice de ping: 🔴`);
-        console.log(`Le ping est de ${Date.now() + 4000 - message.createdTimestamp} ms`)
+    if(Date.now()  - message.createdTimestamp > `500` ) {
+       message.channel.send(`> Le ping est de ${Date.now()  - message.createdTimestamp} ms\n> Indice de ping: 🔴`);
+        console.log(`Le ping est de ${Date.now()  - message.createdTimestamp} ms`)
   }else{
      
-       message.channel.send(`> Le ping est de  ${Date.now() +4000 - message.createdTimestamp} ms\n> Indice de ping: :green_circle:`)
+       message.channel.send(`> Le ping est de  ${Date.now()  - message.createdTimestamp} ms\n> Indice de ping: :green_circle:`)
     }
   } 
 
