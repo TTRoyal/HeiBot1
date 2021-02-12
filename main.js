@@ -81,3 +81,22 @@ function resetBot(channel) {
     .then(() => client.login(process.env.TOKEN))
   .then(() => console.log(config.activity))
 }
+
+
+client.on('ready' , () => {
+	const statuses = [
+		config.status1,
+		config.status2,
+		config.status3,
+		config.status4,
+		config.status5,
+		config.status6,
+		config.status7,
+		config.status8,
+	]
+	let i = 0
+	setInterval(() => {
+		client.user.setActivity(statuses[i],  {type: 'STREAMING', url: 'https://discord.gg/zBtzMXweVy'})
+		i = ++i % statuses.length
+	}, 5000);
+})
