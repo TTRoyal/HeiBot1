@@ -17,7 +17,7 @@ for (const file of commandFiles) {
 
 //Au demarage:
 
-client.login(token)
+client.login(process.env.TOKEN)
 client.on('ready', function (){
 
     console.log(config.MsgConsole)
