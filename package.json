@@ -13,7 +13,7 @@
     "discord.js": "^12.5.1"
     
   },
-   "script": {
+   "scripts": {
     "start": "node main.js"
   }
 }
