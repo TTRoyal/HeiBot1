@@ -70,4 +70,28 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    switch(message.content) {
+        case '.reload':
+            resetBot(message.channel);
+            break;
+
+        // ... other commands
+    }
+});
+
+// Turn bot off (destroy), then turn it back on
+function resetBot(channel) {
+    // send channel a message that you're resetting bot [optional]
+    channel.send(`:arrows_counterclockwise:\`\`\`│Redémarrage…\`\`\``)
+    .then((sentMessage) => sentMessage.edit(`\`\`\`🔄│Redémarrage…\`\`\``))
+    .then((sentMessage) => sentMessage.edit("\`\`\`🔄│Redémarrage…\`\`\`\n\`\`\`Déconnexion en cours…\`\`\`"))
+    .then((sentMessage) => sentMessage.edit("\`\`\`🔄│Redémarrage…\`\`\`\n\`\`\`Chargement des fichiers…\`\`\`"))
+    .then((sentMessage) => sentMessage.edit("\`\`\`🔄│Redémarrage…\`\`\`\n\`\`\`Reconnexion en cours…\`\`\`"))
+    .then((sentMessage) => sentMessage.edit("\`\`\`🔄│Redémarrage…\`\`\`\n\`\`\`Finalisation…\`\`\`"))
+ .then((sentMessage) => sentMessage.edit("```✔️│Redemarrer avec succès…```")) 
+  .then(msg => client.destroy())
+    .then(() => client.login("NzY3MzE0OTYxNzIxOTgyOTk3.X4wHvg.BvfzYXCYAixvrqV4nZBJrEMjJvE"))
+  .then(() => console.log(config.activity))
+}
 // Turn bot off (destroy), then turn it back on
