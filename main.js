@@ -78,6 +78,6 @@ function resetBot(channel) {
     .then((sentMessage) => sentMessage.edit("\`\`\`🔄│Redémarrage…\`\`\`\n\`\`\`Finalisation…\`\`\`"))
  .then((sentMessage) => sentMessage.edit("```✔️│Redemarrer avec succès…```")) 
   .then(msg => client.destroy())
-    .then(() => client.login("NzY3MzE0OTYxNzIxOTgyOTk3.X4wHvg.BvfzYXCYAixvrqV4nZBJrEMjJvE"))
+    .then(() => client.login(process.env.TOKEN))
   .then(() => console.log(config.activity))
 }
