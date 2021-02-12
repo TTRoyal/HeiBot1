@@ -8,11 +8,12 @@
   },
   "author": "TT ROYAL",
   "license": "ISC",
-  "script": {
-    "start": "node main.js"
-  },
+ 
   "dependencies": {
     "discord.js": "^12.5.1"
     
+  },
+   "script": {
+    "start": "node main.js"
   }
 }
